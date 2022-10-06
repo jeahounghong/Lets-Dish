@@ -18,7 +18,7 @@ const IngredientSchema = new Schema({
         type: Boolean,
         required: true
     },
-    imageURL: {
+    imageUrl: {
         type: String,
     }
 })

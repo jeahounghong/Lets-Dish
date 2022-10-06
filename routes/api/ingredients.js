@@ -11,6 +11,8 @@ router.get('/', (req,res) => {
 })
 
 router.post('/', (req,res) => {
+    console.log("BODYYYYYYY")
+    console.log(req.body)
     const newIngredient = new Ingredient(req.body)
     newIngredient.save().then(ingredient => res.json(ingredient))
 })

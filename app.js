@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require('mongoose');
 const users = require("./routes/api/users")
 const ingredients = require("./routes/api/ingredients")
+const countries = require("./routes/api/countries")
 
 const app = express();
 const db = require('./config/keys').mongoURI;
@@ -27,3 +28,4 @@ app.use(bodyParser.json());
     
 app.use("/api/users", users)
 app.use("/api/ingredients", ingredients)
+app.use("/api/countries", countries)

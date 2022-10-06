@@ -1,4 +1,6 @@
 const express = require("express");
-const router = require("./users");
+const router = express.Router()
 
 router.get("/test", (req,res) => res.json({mes: "This is the ingredients route."}))
+
+module.exports = router;

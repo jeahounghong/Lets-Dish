@@ -15,7 +15,7 @@ const IngredientSchema = new Schema({
         required: true,
     },
     glutenFree: {
-        type: Booleam,
+        type: Boolean,
         required: true
     },
     imageURL: {

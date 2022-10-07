@@ -22,7 +22,7 @@ class NavBar extends React.Component {
             <div>
                 <Link to={'/tweets'}>All Tweets</Link>
                 <Link to={'/profile'}>Profile</Link>
-                <Link to={'/new_tweet'}>Write a Tweet</Link>
+                <Link to={'/new_recipe'}>Write a Recipe!</Link>
                 <button onClick={this.logoutUser}>Logout</button>
             </div>
         );

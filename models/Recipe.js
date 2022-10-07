@@ -19,6 +19,10 @@ const RecipeSchema = new Schema({
     recipeUrl: {
         type: String,
         required: true
+    },
+    description: {
+        type: String,
+        required: true
     }
 
 })

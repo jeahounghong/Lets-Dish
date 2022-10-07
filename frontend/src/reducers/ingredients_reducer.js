@@ -5,7 +5,7 @@ const IngredientsReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state);
     switch(action.type){
         case RECEIVE_INGREDIENTS:
-            action.ingredients.forEach(ingredient => {
+            action.ingredients.data.forEach(ingredient => {
                 nextState[ingredient._id] = ingredient
             })
             return nextState;

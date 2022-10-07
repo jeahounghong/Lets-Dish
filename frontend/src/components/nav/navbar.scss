@@ -2,5 +2,11 @@
     background-color: lightgreen;
     display: flex;
     justify-content: space-between;
-    padding: 15px;
+    align-items: center;
+    height: 7vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    // padding: 15px;
 }

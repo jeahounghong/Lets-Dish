@@ -10,7 +10,8 @@ const RecipeSchema = new Schema({
     ingredients: [{
         ingredient: ObjectId,
         quantity: Number,
-        unit: String
+        unit: String,
+        optional: Boolean,
     }],
     country: {
         type: ObjectId

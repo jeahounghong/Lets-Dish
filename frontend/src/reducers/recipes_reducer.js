@@ -1,6 +1,6 @@
 import { RECEIVE_RECIPE } from "../actions/recipe_actions";
 
-const RecipeReducer = (state = {}, action) => {
+const RecipesReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
     switch(action.type){
@@ -12,4 +12,4 @@ const RecipeReducer = (state = {}, action) => {
     }
 }
 
-export default RecipeReducer;
+export default RecipesReducer;

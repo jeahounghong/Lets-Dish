@@ -10,4 +10,8 @@ router.post("/", (req,res) => {
     newCountry.save().then(country => res.json(country))
 })
 
+router.get("/", (req,res) => {
+    Country.find().then(countries => res.json(countries))
+})
+
 module.exports = router;

@@ -7,9 +7,11 @@ const RecipeSchema = new Schema({
         type: String,
         required: true,
     },
-    ingredients: {
-        type: Array
-    },
+    ingredients: [{
+        ingredient: ObjectId,
+        quantity: Number,
+        unit: String
+    }],
     country: {
         type: ObjectId
     },

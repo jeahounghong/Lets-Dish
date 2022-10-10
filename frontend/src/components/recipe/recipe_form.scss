@@ -2,9 +2,14 @@
     width: 80vw;
     // background-color: yellow;
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
+    overflow-y: scroll;
     padding: 10px;
-    justify-content: center;
+    // justify-content: center;
+
+    .picked{
+        background-color: lightgreen;
+    }
 
     li {
         background-color: white;
@@ -95,4 +100,53 @@
         }
 
     }
+}
+
+.included-ingredients{
+    font-size: 20px;
+    width: 90%;
+
+    .thin-col{
+        width: 20%;
+        // background-color: red;
+        text-align: center;
+
+        input{
+            width: 50px;
+            text-align: center;
+        }
+        
+    }
+
+    .wide-col{
+        width: 40%;
+        // background-color: red;
+        text-align: center;
+    }
+
+    .included-ingredient-list-item{
+        display: flex;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        // justify-content: center;
+        align-items: center;
+        border-bottom: solid 1px lightgrey;
+
+
+        select{
+            width: 100px;
+            text-align: center;
+        }
+    }
+    
+}
+
+.ingredient-header{
+    display: flex;
+    // justify-content: space-between;
+    font-weight: bold;
+    border-bottom: solid 1px gray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
 }

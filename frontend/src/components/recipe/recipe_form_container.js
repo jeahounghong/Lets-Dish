@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import RecipeForm from './recipe_form';
 import {fetchIngredients} from '../../actions/ingredient_actions'
 import { fetchCountries } from '../../actions/country_actions';
+import { createRecipe } from '../../actions/recipe_actions';
 
 const mapStateToProps = (state) => ({
     ingredients: state.entities.ingredients,
@@ -10,7 +11,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     fetchIngredients: () => dispatch(fetchIngredients()),
-    fetchCountries: () => dispatch(fetchCountries())
+    fetchCountries: () => dispatch(fetchCountries()),
+    createRecipe: (recipe) => dispatch(createRecipe(recipe))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(RecipeForm)

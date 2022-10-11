@@ -9,7 +9,9 @@ class RecipeForm extends React.Component {
             name: "",
             country: null,
             ingredients: [],
-            ingredientSearch: ""
+            ingredientSearch: "",
+            recipeUrl: "",
+            description: ""
         }
         this.ingredients = this.ingredients.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -17,6 +19,7 @@ class RecipeForm extends React.Component {
         this.addedIngredients = this.addedIngredients.bind(this);
         this.includedIngredient = this.includedIngredient.bind(this);
         this.changeAddedIngredient = this.changeAddedIngredient.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount(){
@@ -135,11 +138,20 @@ class RecipeForm extends React.Component {
             </ul>
         </div>
     }
+
+    handleSubmit(e){
+        e.preventDefault();
+        let recipe = this.state;
+        delete recipe.ingredientSearch
+        console.log(recipe);
+        this.props.createRecipe(recipe)
+        // debugger;
+    }
     
     render(){
         return (<div className="recipe-form-container">
             <h1 className="recipe-form-title">Create a New Recipe!</h1>
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <label>
                     <p className="recipe-element">Name of Recipe</p>
                     <input type="text" name="name" value={this.state.name} onChange={this.handleInput("name")}/>
@@ -162,8 +174,16 @@ class RecipeForm extends React.Component {
                     {this.addedIngredients()}
                 </label>
                 <label>
-                    <p className="recipe-element">Recipe Link</p>
+                    <p className="recipe-element">Description</p>
+                    <textarea name="description" value={this.state.description} onChange={this.handleInput("description")}/>
                 </label>
+                <label>
+                    <p className="recipe-element">Recipe Link</p>
+                    <input type="text" name="recipe-link" value={this.state.recipeUrl} onChange={this.handleInput("recipeUrl")}/>
+                </label>
+                <div className="submit-container">
+                    <input type="submit" name="" value="Create Recipe!"/>
+                </div>
             </form>
         </div>)
     }

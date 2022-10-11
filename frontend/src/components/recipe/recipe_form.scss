@@ -98,7 +98,23 @@
             padding: 5px;
             font-family: 'didot';
         }
+    }
 
+    .submit-container{
+        // background-color: red;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+
+        input {
+            font-family: "didot";
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            border: none;
+        }
     }
 }
 

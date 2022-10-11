@@ -9,7 +9,11 @@ router.get("/", (req,res) => {
 
 router.post("/", (req,res) => {
     const newRecipe = new Recipe(req.body)
+
+    console.log("NEW RECIPE")
+    console.log(newRecipe)
     newRecipe.save().then(recipe => res.json(recipe))
+        .catch(err => console.log(err))
 })
 
 module.exports = router;

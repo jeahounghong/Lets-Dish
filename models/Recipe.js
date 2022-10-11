@@ -24,7 +24,6 @@ const RecipeSchema = new Schema({
         type: String,
         required: true
     }
-
 })
 
 module.exports = Recipe = mongoose.model('Recipe', RecipeSchema);

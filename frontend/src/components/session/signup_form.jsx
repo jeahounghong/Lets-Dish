@@ -8,7 +8,7 @@ class SignupForm extends React.Component {
     super(props);
     this.state = {
       email: '',
-      handle: '',
+      username: '',
       password: '',
       password2: '',
       errors: {}
@@ -36,7 +36,7 @@ class SignupForm extends React.Component {
     e.preventDefault();
     let user = {
       email: this.state.email,
-      handle: this.state.handle,
+      username: this.state.username,
       password: this.state.password,
       password2: this.state.password2
     };
@@ -60,35 +60,44 @@ class SignupForm extends React.Component {
     return (
       <div className="form-container">
         <form onSubmit={this.handleSubmit}>
-          <div className="signup-form">
-            <br/>
+          <h1 className="form-title">Sign Up</h1>
+          {/* <div className="signup-form"> */}
+            <label>
+              <span>Email</span>
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
                 placeholder="Email"
               />
-            <br/>
+            </label>
+            <label>
+              <span>Username</span>
               <input type="text"
-                value={this.state.handle}
-                onChange={this.update('handle')}
-                placeholder="Handle"
+                value={this.state.username}
+                onChange={this.update('username')}
+                placeholder="Username"
               />
-            <br/>
+            </label>
+            <label>
+              <span>Password</span>
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 placeholder="Password"
               />
-            <br/>
+            </label>
+            <label>
+              <span>Confirm Password</span>
               <input type="password"
                 value={this.state.password2}
                 onChange={this.update('password2')}
                 placeholder="Confirm Password"
               />
-            <br/>
-            <input type="submit" value="Submit" />
+            </label>
+            
+            <input type="submit" value="Sign Up!" className='submit' />
             {this.renderErrors()}
-          </div>
+          {/* </div> */}
         </form>
       </div>
     );

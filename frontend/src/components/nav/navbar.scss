@@ -1,7 +1,10 @@
 .navbar-container{
-    background-color: lightgreen;
+    background-color: rgba($color: black, $alpha: 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 10;
     display: flex;
     justify-content: space-between;
+    color: white;
     align-items: center;
     height: 7vh;
     position: fixed;
@@ -9,4 +12,28 @@
     left: 0;
     width: 100vw;
     // padding: 15px;
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .left{
+        width: 33%;
+        padding-left: 30px;
+    }
+    .right{
+        width: 33%;
+        div{
+            float: right;
+        }
+        padding-right: 30px;
+    }
+    .middle{
+        width: 33%;
+        display: flex;
+        justify-content: center;
+    }
 }

@@ -28,6 +28,7 @@ class GlobeView extends React.Component {
             .globeImageUrl('//unpkg.com/three-globe/example/img/earth-day.jpg')
             .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
             // .backgroundImageUrl('https://cosmosurfaces.com/wp-content/uploads/2021/03/Blue-Sky-3cm-401185-2.jpg')
+            // .backgroundColor("rgba(0,0,0,0)")
             .lineHoverPrecision(0)
             .polygonsData(countries.features.filter(d => d.properties.ISO_A2 !== 'AQ'))
             .polygonAltitude(0.02)

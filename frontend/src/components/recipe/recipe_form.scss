@@ -52,9 +52,13 @@
     // background-color: red;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     margin-top: 7vh;
+    position: absolute;
+    height: 93vh;
+    z-index: 10px;
+    overflow-y: scroll;
     // padding-top: 10px;
     // background-color: yellow;
 

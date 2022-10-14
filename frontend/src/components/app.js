@@ -6,6 +6,7 @@ import NavbarContainer from './nav/navbar_container';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import RecipeFormContainer from './recipe/recipe_form_container';
+import SearchRecipeFormContainer from './recipe/search_recipe_form_container';
 import GlobeContainer from './globe/globe_container';
 
 import MainPage from './main/main_page';
@@ -18,6 +19,7 @@ const App = () => (
             <AuthRoute exact path="/" component={MainPage} />
             <AuthRoute exact path='/login' component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer}/>
+            <AuthRoute exact path="/recipe" component={SearchRecipeFormContainer}/>
             <ProtectedRoute exact path="/new_recipe" component={RecipeFormContainer}/>
         </Switch>
     </div>

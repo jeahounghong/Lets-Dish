@@ -1,4 +1,4 @@
-import { RECEIVE_RECIPE } from "../actions/recipe_actions";
+import { RECEIVE_RECIPE, RECEIVE_RECIPES } from "../actions/recipe_actions";
 
 const RecipesReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -7,6 +7,11 @@ const RecipesReducer = (state = {}, action) => {
         case RECEIVE_RECIPE:
             nextState[action.recipe._id] = action.recipe;
             return nextState;
+        case RECEIVE_RECIPES:
+            action.recipes.data.forEach(recipe => {
+                nextState[recipe._id] = recipe
+            })
+            return nextState
         default:
             return state;
     }

@@ -3,4 +3,8 @@
     margin-top: 7vh;
     z-index: 10;
     color: white;
+    height: 93vh;
+    width: 100%;
+    background-color: rgba($color: black, $alpha: 0.5);
+    backdrop-filter: blur(10px);
 }

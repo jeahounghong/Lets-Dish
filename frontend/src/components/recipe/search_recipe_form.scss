@@ -2,7 +2,7 @@
     position: absolute;
     overflow-y: scroll;
     margin-top: 7vh;
-    z-index: 10;
+    z-index: 100;
     color: white;
     height: 93vh;
     width: 100%;
@@ -73,5 +73,12 @@
                 // font-weight: bold;
             }
         }
+    }
+
+    .submit-container{
+        width: 500px;
+        display: flex;
+        justify-content: center;
+        padding: 30px;
     }
 }

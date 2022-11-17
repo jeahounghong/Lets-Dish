@@ -20,7 +20,8 @@ const IngredientSchema = new Schema({
     },
     imageUrl: {
         type: String,
-    }
+    },
+    recipes: [mongoose.Schema.Types.ObjectId]
 })
 
 module.exports = Ingredient = mongoose.model('Ingredient', IngredientSchema);

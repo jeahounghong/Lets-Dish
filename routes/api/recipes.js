@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const Recipe = require("../../models/Recipe");
+const Ingredient = require('../../models/Ingredient')
+const mongoose = require("mongoose");
 
 router.get("/", (req,res) => {
     Recipe.find()
@@ -15,5 +17,39 @@ router.post("/", (req,res) => {
     newRecipe.save().then(recipe => res.json(recipe))
         .catch(err => console.log(err))
 })
+
+router.get("/search", (req,res) => {
+    const ingredients = JSON.parse(req.body.ingredients)
+
+    findRecipes(ingredients)
+        .then(recipes => {
+            res.json(recipes)
+        })
+
+})
+
+/*
+    FIND RECIPES
+    
+    Async function that finds recipes for a given list of ingredients.
+    
+*/
+async function findRecipes(ingredients) {
+    let recipes = {}
+    return await Ingredient.find({ '_id': { $in: ingredients}})
+        .then(ingredients => {
+            ingredients.forEach(ing => {
+                ing.recipes.forEach(recipe => {
+                    recipes[recipe] = recipe;
+                })
+            })
+        })
+        .then(() => {
+            return Recipe.find({ '_id': { $in: Object.values(recipes)}})
+            .then(recs => {
+                    return recs
+                })
+            })
+}
 
 module.exports = router;

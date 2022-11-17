@@ -7,3 +7,5 @@ export const createRecipe = (data) => (
 export const getRecipes = () => (
     axios.get('/api/recipes')
 )
+
+// export const searchRecipe = (ingredients) =>

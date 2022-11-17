@@ -10,7 +10,6 @@ class SearchRecipeForm extends React.Component {
         this.ingredients = this.ingredients.bind(this);
         this.addedIngredients = this.addedIngredients.bind(this);
         this.toggleIngredient = this.toggleIngredient.bind(this);
-        // this.changeAddedIngredient = this.changeAddedIngredient.bind(this)
 
         this.state = {
             ingredientSearch: "",
@@ -20,6 +19,7 @@ class SearchRecipeForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
+        console.log(this.state.ingredients)
     }
 
     handleInput(type){
@@ -42,18 +42,6 @@ class SearchRecipeForm extends React.Component {
         })
         return included
     }
-
-    // changeAddedIngredient(id, type){
-    //     return (e) => {
-    //         let ingredients = this.state.ingredients;
-    //         ingredients.forEach(ingredient => {
-    //             if (ingredient.ingredient === id){
-    //                 ingredient[type] = e.currentTarget.value
-    //             }
-    //         })
-    //         this.setState({ingredients: ingredients})
-    //     }
-    // }
 
     toggleIngredient(ingredient){
         console.log("toggle ingredients")

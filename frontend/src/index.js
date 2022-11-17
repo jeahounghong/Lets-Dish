@@ -7,9 +7,12 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import {fetchIngredients} from './actions/ingredient_actions'
+import {searchRecipes} from './actions/recipe_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
+
+  window.searchRecipes = searchRecipes;
 
   if (localStorage.jwtToken) {
     setAuthToken(localStorage.jwtToken);

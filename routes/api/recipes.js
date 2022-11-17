@@ -19,7 +19,13 @@ router.post("/", (req,res) => {
 })
 
 router.get("/search", (req,res) => {
-    const ingredients = JSON.parse(req.body.ingredients)
+    let url = req.url;
+    url = url.substring(0,8) + "&" + url.substring(8)
+    
+    let urlArray = url.split("&ingredients[]=")
+    urlArray.shift()
+    const ingredients = urlArray
+
 
     findRecipes(ingredients)
         .then(recipes => {
@@ -32,7 +38,7 @@ router.get("/search", (req,res) => {
     FIND RECIPES
     
     Async function that finds recipes for a given list of ingredients.
-    
+
 */
 async function findRecipes(ingredients) {
     let recipes = {}

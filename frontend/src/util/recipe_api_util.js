@@ -8,4 +8,6 @@ export const getRecipes = () => (
     axios.get('/api/recipes')
 )
 
-// export const searchRecipe = (ingredients) =>
+export const searchRecipes = (ingredients) => (
+    axios.get('/api/recipes/search', ingredients)
+)

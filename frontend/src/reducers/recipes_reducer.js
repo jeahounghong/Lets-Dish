@@ -11,7 +11,7 @@ const RecipesReducer = (state = {}, action) => {
             action.recipes.data.forEach(recipe => {
                 nextState[recipe._id] = recipe
             })
-            return nextState
+            return nextState;
         default:
             return state;
     }
